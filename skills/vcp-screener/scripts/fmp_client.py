@@ -168,6 +168,12 @@ class FMPClient:
         # so _request_with_fallback can surface suppressed errors even when
         # an endpoint was called with quiet=True.
         self._last_error: Optional[str] = None
+        # Set once a multi-symbol /quote batch fails on this key's tier (see
+        # get_batch_quotes). Once True, skip the doomed batch attempt for the
+        # rest of this client's life and go straight to per-symbol calls —
+        # avoids wasting 2 API calls per group of 5 re-discovering the same
+        # tier limit.
+        self._batch_quote_blocked = False
 
     def _rate_limited_get(
         self, url: str, params: Optional[dict] = None, quiet: bool = False
@@ -408,16 +414,36 @@ class FMPClient:
         return data
 
     def get_batch_quotes(self, symbols: list[str]) -> dict[str, dict]:
-        """Fetch quotes for a list of symbols, batching up to 5 per request"""
+        """Fetch quotes for a list of symbols, batching up to 5 per request.
+
+        Some FMP tiers reject the comma-separated multi-symbol quote request
+        (observed: 402 "Special Endpoint" on both /stable and /v3 for a batch
+        of 5, while the identical single-symbol request succeeds). When a
+        batch comes back empty, fall back to one quote call per symbol in
+        that batch rather than silently dropping all 5. This costs more API
+        calls on tiers where batching is blocked (1 call/symbol instead of
+        1 call per 5 symbols) — there is no way around that from the client
+        side; it's a tier limit, not a bug.
+        """
         results = {}
         batch_size = 5
         for i in range(0, len(symbols), batch_size):
             batch = symbols[i : i + batch_size]
-            batch_str = ",".join(batch)
-            quotes = self.get_quote(batch_str)
-            if quotes:
-                for q in quotes:
-                    results[q["symbol"]] = q
+
+            if not self._batch_quote_blocked and len(batch) > 1:
+                batch_str = ",".join(batch)
+                quotes = self.get_quote(batch_str)
+                if quotes:
+                    for q in quotes:
+                        results[q["symbol"]] = q
+                    continue
+                self._batch_quote_blocked = True
+
+            for sym in batch:
+                single = self.get_quote(sym)
+                if single:
+                    for q in single:
+                        results[q["symbol"]] = q
         return results
 
     def get_batch_historical(self, symbols: list[str], days: int = 260) -> dict[str, list[dict]]:

@@ -21,24 +21,36 @@ description: Screen S&P 500 stocks for Mark Minervini's Volatility Contraction P
 > contraction-building → scoring → execution-state → forward-outcome →
 > report pipeline works on real market data, not just that it imports.
 >
-> **Two operational findings from that run, not code bugs:**
-> 1. **ETF historical data needs a paid FMP tier.** The original queued
->    HYG test failed with `402 Premium` on both the `/stable` and legacy
->    `/v3` endpoints — FMP's free tier does not serve historical OHLCV for
->    ETFs. Use individual stocks for `--history` mode on a free key.
-> 2. **The cross-sectional screener's quote step also needs a paid tier.**
->    `get_batch_quotes` (Phase 1 pre-filter, used when *not* passing
->    `--history`) hit the same `402`/`403` wall on the free tier, even for
->    plain stocks. **Only `--history <TICKER>` (single-symbol historical
->    scan) is confirmed working on a free FMP key** — the "screen all of
->    S&P 500 right now" cross-sectional mode is unverified and may need a
->    paid plan.
-> 3. Zero detections in a short/default window is not itself a bug — VCP
->    requires a genuine flat-top base (successive swing highs within 5% of
->    each other); a stock in a strong monotonic rally without a proper base
->    will correctly produce 0 detections. Widen `--history` and/or relax
->    `--t1-depth-min` / `--contraction-ratio` before concluding something is
->    broken.
+> **CORRECTED 2026-09-13 (same day):** an earlier version of this note
+> claimed "ETF historical data needs a paid tier, individual stocks work
+> fine." That was wrong — it only looked true because the verification
+> above happened to use AAPL. Testing `MMM` (3M, an ordinary S&P 500
+> blue-chip, nothing exotic) showed it fails identically on **both** quote
+> and historical-price endpoints. The real constraint is narrower and more
+> severe:
+>
+> **This free FMP key only has data access to a small curated list of
+> popular tickers — not "all stocks except ETFs."** Confirmed working:
+> `AAPL MSFT NVDA AMZN META GOOGL TSLA COST WMT`. Confirmed blocked (same
+> `402`/`403` pattern as the HYG ETF test): `MMM APD AVGO` and most other
+> ordinary S&P 500 names tested. This is **not** a batching artifact —
+> `fmp_client.py`'s `get_batch_quotes` was patched to fall back from
+> 5-symbol batches to per-symbol calls (see git history), and the
+> per-symbol calls fail identically for blocked tickers.
+>
+> **Practical consequence:** a real "screen most/all of S&P 500 right now"
+> is not possible on this plan, regardless of code changes on our side.
+> Only the confirmed-accessible tickers above (plus whichever others turn
+> out to be on FMP's free-tier allow-list — untested beyond what's listed)
+> can be screened. A paid FMP tier, or swapping to a different data
+> provider, would be required for broader coverage.
+>
+> Zero VCP detections in a short/default window is separately not itself a
+> bug — VCP requires a genuine flat-top base (successive swing highs within
+> 5% of each other); a stock in a strong monotonic rally without a proper
+> base will correctly produce 0 detections. Widen `--history` and/or relax
+> `--t1-depth-min` / `--contraction-ratio` before concluding something is
+> broken.
 
 Screen S&P 500 stocks for Mark Minervini's Volatility Contraction Pattern (VCP), identifying Stage 2 uptrend stocks with contracting volatility near breakout pivot points.
 
