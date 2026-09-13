@@ -38,12 +38,20 @@ description: Screen S&P 500 stocks for Mark Minervini's Volatility Contraction P
 > 5-symbol batches to per-symbol calls (see git history), and the
 > per-symbol calls fail identically for blocked tickers.
 >
-> **Practical consequence:** a real "screen most/all of S&P 500 right now"
-> is not possible on this plan, regardless of code changes on our side.
-> Only the confirmed-accessible tickers above (plus whichever others turn
-> out to be on FMP's free-tier allow-list — untested beyond what's listed)
-> can be screened. A paid FMP tier, or swapping to a different data
-> provider, would be required for broader coverage.
+> **Resolved 2026-09-13 (same day) by adding a free alternative data source.**
+> A full S&P 500 screen is not possible on the free FMP tier regardless of
+> code changes — but `scripts/yahoo_client.py` (Yahoo's public chart API,
+> no key) was verified working for `MMM`, `HYG`, `SPY`, and hyphenated
+> tickers like `BRK-B` — all of the things FMP's free tier blocked. It's
+> now the **default** data source (`--data-source yahoo`); pass
+> `--data-source fmp --api-key ...` to use FMP instead if you have a paid
+> plan with broader symbol access. No quote endpoint exists on Yahoo's free
+> API — quotes are synthesized from the same historical-bars fetch used for
+> pattern detection, which also means Phase 1 and Phase 2 share one fetch
+> per symbol instead of FMP's original two, cutting network calls roughly
+> in half for symbols that pass pre-filtering. Known gap: no real-time
+> intraday price (latest daily close only) and no `marketCap` (display-only
+> field; nothing in scoring reads it).
 >
 > Zero VCP detections in a short/default window is separately not itself a
 > bug — VCP requires a genuine flat-top base (successive swing highs within
@@ -65,9 +73,13 @@ Screen S&P 500 stocks for Mark Minervini's Volatility Contraction Pattern (VCP),
 
 ## Prerequisites
 
-- FMP API key (set `FMP_API_KEY` environment variable or pass `--api-key`)
-- Free tier (250 calls/day) is sufficient for default screening (top 100 candidates)
-- Paid tier recommended for full S&P 500 screening (`--full-sp500`)
+- **Default (`--data-source yahoo`):** nothing — no key, no signup. Free and
+  used automatically unless you pass `--data-source fmp`.
+- **Optional (`--data-source fmp`):** FMP API key (`FMP_API_KEY` env var or
+  `--api-key`). Only worth using if you have a **paid** FMP plan — a free-tier
+  key has data access to a small curated ticker list only (confirmed
+  working: `AAPL MSFT NVDA AMZN META GOOGL TSLA COST WMT`), not the broader
+  S&P 500.
 
 ## Workflow
 
@@ -219,7 +231,8 @@ For each top candidate, present:
 - `scripts/report_generator.py` — JSON/Markdown report writer (cross-sectional screen)
 - `scripts/historical_scanner.py` — single-ticker historical VCP walker
 - `scripts/historical_report.py` — JSON/Markdown report writer (single-ticker timeline)
-- `scripts/fmp_client.py` + `scripts/_fmp_compat.py` — FMP API client with v3→stable URL migration
+- `scripts/yahoo_client.py` — **default data source**: free, keyless, broad S&P 500 + ETF coverage via Yahoo's public chart API; synthesizes quotes from historical bars (no separate quote endpoint needed)
+- `scripts/fmp_client.py` + `scripts/_fmp_compat.py` — optional `--data-source fmp` client for paid FMP plans, with v3→stable URL migration
 - `scripts/calculators/*.py` — the pattern-detection math (execution_state, pattern_classifier, pivot_proximity_calculator, relative_strength_calculator, trend_template_calculator, vcp_pattern_calculator, volume_pattern_calculator, forward_outcome)
 - `references/vcp_methodology.md` - VCP theory and Trend Template explanation
 - `references/scoring_system.md` - Scoring thresholds and component weights

@@ -42,6 +42,7 @@ from calculators.volume_pattern_calculator import calculate_volume_pattern
 from fmp_client import FMPClient
 from report_generator import generate_json_report, generate_markdown_report
 from scorer import calculate_composite_score
+from yahoo_client import YahooClient
 
 # Historical scan window default (~5 years in trading days). Used by
 # argparse `const=` so bare `--history` keeps the prior default behavior.
@@ -55,6 +56,19 @@ def parse_arguments():
 
     parser.add_argument(
         "--api-key", help="FMP API key (defaults to FMP_API_KEY environment variable)"
+    )
+    parser.add_argument(
+        "--data-source",
+        choices=["yahoo", "fmp"],
+        default="yahoo",
+        help=(
+            "Data provider. 'yahoo' (default): free, no key, broad S&P 500 + ETF "
+            "coverage via Yahoo's public chart API, but no real-time intraday quote "
+            "or marketCap. 'fmp': requires --api-key/FMP_API_KEY; a free-tier FMP key "
+            "has data access to only a small curated ticker list (confirmed: AAPL "
+            "MSFT NVDA AMZN META GOOGL TSLA COST WMT) -- use 'fmp' only if you have a "
+            "paid plan with broader symbol access."
+        ),
     )
     parser.add_argument(
         "--max-candidates",
@@ -672,13 +686,17 @@ def main():
     print("=" * 70)
     print()
 
-    # Initialize FMP client
-    try:
-        client = FMPClient(api_key=args.api_key)
-        print("FMP API client initialized")
-    except ValueError as e:
-        print(f"ERROR: {e}", file=sys.stderr)
-        sys.exit(1)
+    # Initialize the data client
+    if args.data_source == "fmp":
+        try:
+            client = FMPClient(api_key=args.api_key)
+            print("FMP API client initialized")
+        except ValueError as e:
+            print(f"ERROR: {e}", file=sys.stderr)
+            sys.exit(1)
+    else:
+        client = YahooClient()
+        print("Yahoo Finance client initialized (free, no API key)")
 
     # ------------------------------------------------------------------------
     # Historical single-ticker mode dispatch — completes via early return.
