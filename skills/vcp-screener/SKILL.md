@@ -22,6 +22,14 @@ description: Screen S&P 500 stocks for Mark Minervini's Volatility Contraction P
 
 Screen S&P 500 stocks for Mark Minervini's Volatility Contraction Pattern (VCP), identifying Stage 2 uptrend stocks with contracting volatility near breakout pivot points.
 
+## Queued test (once `calculators/` is recovered)
+
+Run a historical VCP scan on **HYG** as the first real smoke test:
+
+```bash
+python3 skills/vcp-screener/scripts/screen_vcp.py --history --ticker HYG
+```
+
 ## When to Use
 
 - User asks for VCP screening or Minervini-style setups
