@@ -1,0 +1,17 @@
+# Trade journal data — personal/sensitive, never commit.
+state/theses/*.yaml
+state/theses/_index.json
+state/journal/
+
+# Generated reports (regeneratable from state + skills).
+reports/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS cruft
+.DS_Store
+Thumbs.db

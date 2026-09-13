@@ -1,0 +1,49 @@
+# Skills index for solo-trader OS, validated by scripts/validate_skills_index.py.
+#
+# NOTE: This file's existence and exact name are an assumption on my part —
+# the workflows/README.md references `scripts/validate_skills_index.py` but
+# I was not given the actual index file or the validator script. The entry
+# below is the one "trade-memory" catalog entry you pasted; its schema
+# (category / required_skills + recommended_skills + optional_skills /
+# related_workflows) doesn't match the workflow-manifest schema in
+# workflows/README.md (which has steps/artifacts and no `recommended_skills`
+# tier), so it does not belong in workflows/. If the real index file has a
+# different name or a wrapping structure (e.g. `entries:` key), move this
+# entry there instead.
+
+entries:
+  - schema_version: 1
+    id: trade-memory
+    display_name: Trade Memory
+    category: trade-memory
+    timeframe: event-driven
+    difficulty: beginner
+    api_profile: no-api-basic
+    target_users:
+      - part-time-swing-trader
+      - long-term-investor
+      - growth-investor
+
+    when_to_use: >-
+      The shared learning loop: record closed-trade outcomes, run postmortems, and
+      feed lessons back into the process. Use after every closed position and for
+      the monthly performance retrospective. Operationalized by the
+      trade-memory-loop (per closed trade) and monthly-performance-review (monthly)
+      workflows.
+    when_not_to_use: >-
+      Do not run before a position is closed — update an open thesis with
+      trader-memory-core directly instead. Do not skip the loop after a closed
+      trade, even on winners.
+
+    required_skills:
+      - trader-memory-core
+      - signal-postmortem
+    recommended_skills:
+      - backtest-expert
+      - trade-performance-coach
+    optional_skills:
+      - trade-hypothesis-ideator
+
+    related_workflows:
+      - trade-memory-loop
+      - monthly-performance-review
