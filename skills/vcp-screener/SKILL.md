@@ -5,24 +5,19 @@ description: Screen S&P 500 stocks for Mark Minervini's Volatility Contraction P
 
 # VCP Screener - Minervini Volatility Contraction Pattern
 
-> **PARTIALLY RECOVERED.** The orchestrator (`screen_vcp.py`), scorer,
-> report generator, historical scanner, and FMP client (`fmp_client.py` +
-> `_fmp_compat.py`) are now present and confirmed to be the real
-> implementation — but `screen_vcp.py` imports a `calculators/` package
+> **COMPLETE.** All files recovered: `screen_vcp.py`, `scorer.py`,
+> `report_generator.py`, `historical_scanner.py`, `historical_report.py`,
+> `fmp_client.py`, `_fmp_compat.py`, the full `calculators/` package
 > (`execution_state`, `pattern_classifier`, `pivot_proximity_calculator`,
 > `relative_strength_calculator`, `trend_template_calculator`,
-> `vcp_pattern_calculator`, `volume_pattern_calculator`, `forward_outcome`)
-> that was never provided — that's where the actual pattern-detection math
-> lives (contraction depths, Stage-2 scoring thresholds, etc.), and it has
-> deliberately not been reconstructed (see the repo README for why). A
-> sibling `historical_report.py` (imported by `--history` mode) and the 3
-> reference docs below are also still missing. `python3 screen_vcp.py`
-> currently fails with `ModuleNotFoundError: No module named 'calculators'`
-> — confirmed by import-testing it, not assumed.
+> `vcp_pattern_calculator`, `volume_pattern_calculator`, `forward_outcome`),
+> and all 3 reference docs. `import screen_vcp` succeeds — confirmed by
+> running it, not assumed. **Not yet run against a real FMP API key** — the
+> queued HYG test below still needs `FMP_API_KEY` set.
 
 Screen S&P 500 stocks for Mark Minervini's Volatility Contraction Pattern (VCP), identifying Stage 2 uptrend stocks with contracting volatility near breakout pivot points.
 
-## Queued test (once `calculators/` is recovered)
+## Queued test — needs `FMP_API_KEY`
 
 Run a historical VCP scan on **HYG** as the first real smoke test:
 
@@ -190,13 +185,13 @@ For each top candidate, present:
 
 ## Resources
 
-- `scripts/screen_vcp.py` — main orchestrator (present)
-- `scripts/scorer.py` — 5-component composite scoring engine (present)
-- `scripts/report_generator.py` — JSON/Markdown report writer (present)
-- `scripts/historical_scanner.py` — single-ticker historical VCP walker (present)
-- `scripts/fmp_client.py` + `scripts/_fmp_compat.py` — FMP API client with v3→stable URL migration (present)
-- `scripts/calculators/*.py` — **MISSING.** The actual pattern-detection math (execution_state, pattern_classifier, pivot_proximity_calculator, relative_strength_calculator, trend_template_calculator, vcp_pattern_calculator, volume_pattern_calculator, forward_outcome). Deliberately not reconstructed — see repo README.
-- `scripts/historical_report.py` — **MISSING.** JSON/Markdown report writer for `--history` mode.
-- `references/vcp_methodology.md` - VCP theory and Trend Template explanation (MISSING)
-- `references/scoring_system.md` - Scoring thresholds and component weights (MISSING)
-- `references/fmp_api_endpoints.md` - API endpoints and rate limits (MISSING)
+- `scripts/screen_vcp.py` — main orchestrator
+- `scripts/scorer.py` — 5-component composite scoring engine
+- `scripts/report_generator.py` — JSON/Markdown report writer (cross-sectional screen)
+- `scripts/historical_scanner.py` — single-ticker historical VCP walker
+- `scripts/historical_report.py` — JSON/Markdown report writer (single-ticker timeline)
+- `scripts/fmp_client.py` + `scripts/_fmp_compat.py` — FMP API client with v3→stable URL migration
+- `scripts/calculators/*.py` — the pattern-detection math (execution_state, pattern_classifier, pivot_proximity_calculator, relative_strength_calculator, trend_template_calculator, vcp_pattern_calculator, volume_pattern_calculator, forward_outcome)
+- `references/vcp_methodology.md` - VCP theory and Trend Template explanation
+- `references/scoring_system.md` - Scoring thresholds and component weights
+- `references/fmp_api_endpoints.md` - API endpoints and rate limits
