@@ -5,25 +5,42 @@ description: Screen S&P 500 stocks for Mark Minervini's Volatility Contraction P
 
 # VCP Screener - Minervini Volatility Contraction Pattern
 
-> **COMPLETE.** All files recovered: `screen_vcp.py`, `scorer.py`,
-> `report_generator.py`, `historical_scanner.py`, `historical_report.py`,
-> `fmp_client.py`, `_fmp_compat.py`, the full `calculators/` package
-> (`execution_state`, `pattern_classifier`, `pivot_proximity_calculator`,
+> **COMPLETE and VERIFIED END-TO-END** against live FMP data on 2026-09-13.
+> All files recovered: `screen_vcp.py`, `scorer.py`, `report_generator.py`,
+> `historical_scanner.py`, `historical_report.py`, `fmp_client.py`,
+> `_fmp_compat.py`, the full `calculators/` package (`execution_state`,
+> `pattern_classifier`, `pivot_proximity_calculator`,
 > `relative_strength_calculator`, `trend_template_calculator`,
 > `vcp_pattern_calculator`, `volume_pattern_calculator`, `forward_outcome`),
-> and all 3 reference docs. `import screen_vcp` succeeds — confirmed by
-> running it, not assumed. **Not yet run against a real FMP API key** — the
-> queued HYG test below still needs `FMP_API_KEY` set.
+> and all 3 reference docs.
+>
+> **Verification run:** `--history --ticker AAPL` (8-year window, relaxed
+> thresholds) produced 2 real detections with internally-consistent contraction
+> dates/prices, correct forward-outcome P&L math, and correctly-generated
+> Markdown/JSON reports — confirms the full swing-detection →
+> contraction-building → scoring → execution-state → forward-outcome →
+> report pipeline works on real market data, not just that it imports.
+>
+> **Two operational findings from that run, not code bugs:**
+> 1. **ETF historical data needs a paid FMP tier.** The original queued
+>    HYG test failed with `402 Premium` on both the `/stable` and legacy
+>    `/v3` endpoints — FMP's free tier does not serve historical OHLCV for
+>    ETFs. Use individual stocks for `--history` mode on a free key.
+> 2. **The cross-sectional screener's quote step also needs a paid tier.**
+>    `get_batch_quotes` (Phase 1 pre-filter, used when *not* passing
+>    `--history`) hit the same `402`/`403` wall on the free tier, even for
+>    plain stocks. **Only `--history <TICKER>` (single-symbol historical
+>    scan) is confirmed working on a free FMP key** — the "screen all of
+>    S&P 500 right now" cross-sectional mode is unverified and may need a
+>    paid plan.
+> 3. Zero detections in a short/default window is not itself a bug — VCP
+>    requires a genuine flat-top base (successive swing highs within 5% of
+>    each other); a stock in a strong monotonic rally without a proper base
+>    will correctly produce 0 detections. Widen `--history` and/or relax
+>    `--t1-depth-min` / `--contraction-ratio` before concluding something is
+>    broken.
 
 Screen S&P 500 stocks for Mark Minervini's Volatility Contraction Pattern (VCP), identifying Stage 2 uptrend stocks with contracting volatility near breakout pivot points.
-
-## Queued test — needs `FMP_API_KEY`
-
-Run a historical VCP scan on **HYG** as the first real smoke test:
-
-```bash
-python3 skills/vcp-screener/scripts/screen_vcp.py --history --ticker HYG
-```
 
 ## When to Use
 
