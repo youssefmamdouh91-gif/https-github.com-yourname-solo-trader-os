@@ -93,8 +93,12 @@ def generate_markdown_report(
     if results:
         lines.append("## Quick Scan")
         lines.append("")
-        lines.append("| # | Symbol | Quality | State | Type | Price | Pivot Dist |")
-        lines.append("|---|--------|---------|-------|------|-------|------------|")
+        lines.append(
+            "| # | Symbol | Quality | State | Type | Price | Pivot Dist | Entry | Stop | Target |"
+        )
+        lines.append(
+            "|---|--------|---------|-------|------|-------|------------|-------|------|--------|"
+        )
         for i, stock in enumerate(results, 1):
             sym = stock.get("symbol", "?")
             q_rating = stock.get("quality_rating", stock.get("rating", "N/A"))
@@ -105,8 +109,16 @@ def generate_markdown_report(
             dist = stock.get("distance_from_pivot_pct")
             dist_str = f"{dist:+.1f}%" if dist is not None else "—"
             cap_marker = "★" if stock.get("state_cap_applied") else ""
+            piv = stock.get("pivot_proximity", {})
+            entry = piv.get("entry_price")
+            stop = piv.get("stop_loss_price")
+            target = piv.get("take_profit_price")
+            entry_str = f"${entry:.2f}" if entry else "—"
+            stop_str = f"${stop:.2f}" if stop else "—"
+            target_str = f"${target:.2f}" if target else "—"
             lines.append(
-                f"| {i} | {sym} | {quality}{cap_marker} | {state} | {ptype} | ${price:.2f} | {dist_str} |"
+                f"| {i} | {sym} | {quality}{cap_marker} | {state} | {ptype} | ${price:.2f} | "
+                f"{dist_str} | {entry_str} | {stop_str} | {target_str} |"
             )
         lines.append("")
         lines.append("★ = State Cap applied (rating downgraded from raw score)")
@@ -306,6 +318,8 @@ def _format_stock_entry(rank: int, stock: dict) -> list[str]:
     # Trade setup (distance-aware)
     pivot_price = vcp.get("pivot_price")
     stop_loss = piv.get("stop_loss_price")
+    take_profit = piv.get("take_profit_price")
+    reward_risk_ratio = piv.get("reward_risk_ratio")
     risk_pct = piv.get("risk_pct")
     dist = piv.get("distance_from_pivot_pct")
     trade_status = piv.get("trade_status", "")
@@ -335,8 +349,13 @@ def _format_stock_entry(rank: int, stock: dict) -> list[str]:
         lines.append("- Action: Wait for new base formation and a new pivot point.")
     elif dist is not None and 5 < dist <= 10:
         # Chase warning zone
-        lines.append(f"- Pivot: ${pivot_price:.2f}" if pivot_price else "- Pivot: N/A")
+        lines.append(f"- Pivot / Entry: ${pivot_price:.2f}" if pivot_price else "- Pivot: N/A")
         lines.append(f"- Stop-loss: ${stop_loss:.2f}" if stop_loss else "- Stop-loss: N/A")
+        lines.append(
+            f"- Take-profit: ${take_profit:.2f} ({reward_risk_ratio:.1f}:1 R:R)"
+            if take_profit
+            else "- Take-profit: N/A"
+        )
         lines.append(
             f"- Risk from current price: {risk_pct:.1f}%" if risk_pct is not None else "- Risk: N/A"
         )
@@ -345,8 +364,13 @@ def _format_stock_entry(rank: int, stock: dict) -> list[str]:
         )
     else:
         # Normal range (-8% to +5%) or below
-        lines.append(f"- Pivot: ${pivot_price:.2f}" if pivot_price else "- Pivot: N/A")
+        lines.append(f"- Pivot / Entry: ${pivot_price:.2f}" if pivot_price else "- Pivot: N/A")
         lines.append(f"- Stop-loss: ${stop_loss:.2f}" if stop_loss else "- Stop-loss: N/A")
+        lines.append(
+            f"- Take-profit: ${take_profit:.2f} ({reward_risk_ratio:.1f}:1 R:R)"
+            if take_profit
+            else "- Take-profit: N/A"
+        )
         lines.append(f"- Risk: {risk_pct:.1f}%" if risk_pct is not None else "- Risk: N/A")
 
     guidance = stock.get("guidance", "N/A")

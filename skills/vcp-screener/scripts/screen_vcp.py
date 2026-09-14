@@ -188,6 +188,12 @@ def parse_arguments():
             "execution_state in ('Pre-breakout', 'Breakout')"
         ),
     )
+    parser.add_argument(
+        "--reward-risk-ratio",
+        type=float,
+        default=2.0,
+        help="Take-profit target as a multiple of entry-to-stop risk (default: 2.0)",
+    )
 
     hist_group = parser.add_argument_group("Historical single-ticker mode")
     # --history accepts an optional integer: scan-window length in trading days.
@@ -334,6 +340,7 @@ def analyze_stock(
     breakout_volume_ratio: float = 1.5,
     max_sma200_extension: float = 50.0,
     wide_and_loose_threshold: float = 15.0,
+    reward_risk_ratio: float = 2.0,
     as_of_offset: int = 0,
 ) -> Optional[dict]:
     """
@@ -411,6 +418,7 @@ def analyze_stock(
         pivot_price=pivot_price,
         last_contraction_low=last_low,
         breakout_volume=vol_result.get("breakout_volume_detected", False),
+        reward_risk_ratio=reward_risk_ratio,
     )
 
     # 6. Execution State — separates "strong pattern" from "buyable now"
@@ -850,6 +858,7 @@ def main():
             breakout_volume_ratio=args.breakout_volume_ratio,
             max_sma200_extension=args.max_sma200_extension,
             wide_and_loose_threshold=args.wide_and_loose_threshold,
+            reward_risk_ratio=args.reward_risk_ratio,
         )
 
         if analysis:
@@ -982,11 +991,18 @@ def main():
         print()
         print(f"Top {min(5, len(results))} Results:")
         for i, s in enumerate(results[:5], 1):
-            pivot = s.get("vcp_pattern", {}).get("pivot_price")
-            pivot_str = f"Pivot: ${pivot:.2f}" if pivot else ""
+            piv = s.get("pivot_proximity", {})
+            entry = piv.get("entry_price")
+            stop = piv.get("stop_loss_price")
+            target = piv.get("take_profit_price")
+            trade_str = (
+                f"Entry: ${entry:.2f}  SL: ${stop:.2f}  TP: ${target:.2f}"
+                if entry and stop and target
+                else (f"Entry: ${entry:.2f}" if entry else "")
+            )
             print(
                 f"  {i}. {s['symbol']:6} Score: {s['composite_score']:5.1f} "
-                f"({s['rating']}) {pivot_str}"
+                f"({s['rating']}) {trade_str}"
             )
     else:
         print()

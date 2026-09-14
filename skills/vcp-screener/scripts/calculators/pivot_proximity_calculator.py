@@ -19,7 +19,9 @@ Distance-priority scoring (Minervini: do not chase >5% above pivot):
 - < -15%:            10 (FAR FROM PIVOT)
 
 Also calculates:
+- Entry price (the pivot / breakout buy trigger)
 - Stop-loss price (below last contraction low)
+- Take-profit price (entry + reward_risk_ratio x entry-to-stop risk)
 - Risk % per share (entry to stop distance)
 """
 
@@ -31,6 +33,7 @@ def calculate_pivot_proximity(
     pivot_price: Optional[float],
     last_contraction_low: Optional[float] = None,
     breakout_volume: bool = False,
+    reward_risk_ratio: float = 2.0,
 ) -> dict:
     """
     Calculate proximity to pivot point and risk metrics.
@@ -40,15 +43,20 @@ def calculate_pivot_proximity(
         pivot_price: The pivot (breakout) price from VCP pattern
         last_contraction_low: Low of the last contraction (for stop-loss)
         breakout_volume: Whether current volume is 1.5x+ above average
+        reward_risk_ratio: Take-profit distance above entry, as a multiple
+            of the entry-to-stop risk (default 2.0 = a 2:1 reward:risk target)
 
     Returns:
-        Dict with score (0-100), distance_pct, stop_loss, risk_pct
+        Dict with score (0-100), distance_pct, entry_price, stop_loss_price,
+        take_profit_price, risk_pct
     """
     if not pivot_price or pivot_price <= 0:
         return {
             "score": 0,
             "distance_from_pivot_pct": None,
+            "entry_price": None,
             "stop_loss_price": None,
+            "take_profit_price": None,
             "risk_pct": None,
             "trade_status": "NO PIVOT",
             "error": "No valid pivot price",
@@ -58,7 +66,9 @@ def calculate_pivot_proximity(
         return {
             "score": 0,
             "distance_from_pivot_pct": None,
+            "entry_price": None,
             "stop_loss_price": None,
+            "take_profit_price": None,
             "risk_pct": None,
             "trade_status": "INVALID PRICE",
             "error": "Invalid current price",
@@ -111,8 +121,9 @@ def calculate_pivot_proximity(
             score += 10
             trade_status += " (vol confirmed)"
 
-    # Calculate stop-loss and risk
+    # Calculate stop-loss, take-profit, and risk
     stop_loss_price = None
+    take_profit_price = None
     risk_pct = None
 
     if last_contraction_low and last_contraction_low > 0:
@@ -128,11 +139,21 @@ def calculate_pivot_proximity(
             trade_status = "BELOW STOP LEVEL"
             score = 0
 
+        # Take-profit: entry (pivot) + reward_risk_ratio x entry-to-stop risk.
+        # Uses pivot, not current price, so the target reflects the planned
+        # trade (buy at pivot) rather than drifting with today's quote.
+        if pivot_price > stop_loss_price:
+            entry_risk_per_share = pivot_price - stop_loss_price
+            take_profit_price = round(pivot_price + reward_risk_ratio * entry_risk_per_share, 2)
+
     return {
         "score": score,
         "distance_from_pivot_pct": round(distance_pct, 2),
+        "entry_price": round(pivot_price, 2),
         "pivot_price": round(pivot_price, 2),
         "stop_loss_price": stop_loss_price,
+        "take_profit_price": take_profit_price,
+        "reward_risk_ratio": reward_risk_ratio,
         "risk_pct": risk_pct,
         "trade_status": trade_status,
         "error": None,

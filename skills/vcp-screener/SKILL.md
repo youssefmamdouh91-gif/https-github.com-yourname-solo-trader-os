@@ -179,6 +179,7 @@ python3 skills/vcp-screener/scripts/screen_vcp.py \
 | `--max-sma200-extension` | 50.0% | — | SMA200 distance threshold for Overextended state and penalty |
 | `--wide-and-loose-threshold` | 15.0% | — | Final contraction depth above which wide-and-loose flag triggers |
 | `--strict` | off | — | Minervini strict mode: only Pre-breakout or Breakout with valid VCP |
+| `--reward-risk-ratio` | 2.0 | — | Take-profit target as a multiple of entry-to-stop risk (e.g. 2.0 = 2:1 R:R) |
 
 ### Step 2: Review Results
 
