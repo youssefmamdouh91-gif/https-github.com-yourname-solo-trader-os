@@ -1,0 +1,39 @@
+name: VCP Screen (S&P 500)
+
+on:
+  schedule:
+    # 16:00 UTC = 8:00 PM Asia/Dubai, Wednesdays and Saturdays
+    - cron: "0 16 * * 3,6"
+  workflow_dispatch: {}
+
+jobs:
+  screen:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        working-directory: skills/vcp-screener/scripts
+        run: pip install -r ../requirements.txt
+
+      - name: Run VCP screener
+        working-directory: skills/vcp-screener/scripts
+        run: python3 screen_vcp.py --full-sp500 --data-source yahoo --output-dir reports --top 20
+
+      - name: Post results to job summary
+        working-directory: skills/vcp-screener/scripts
+        run: |
+          LATEST_MD=$(ls -t reports/*.md | head -n1)
+          cat "$LATEST_MD" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload full reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: vcp-screener-reports
+          path: skills/vcp-screener/scripts/reports/
