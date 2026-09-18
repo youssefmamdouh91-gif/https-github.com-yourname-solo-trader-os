@@ -5,6 +5,9 @@ on:
     # 16:00 UTC = 8:00 PM Asia/Dubai, Wednesdays and Saturdays
     - cron: "0 16 * * 3,6"
   workflow_dispatch: {}
+  push:
+    paths:
+      - ".github/workflows/vcp-screen.yml"
 
 permissions:
   contents: write
