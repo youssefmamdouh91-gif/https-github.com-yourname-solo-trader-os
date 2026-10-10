@@ -1,5 +1,5 @@
 # VCP Screener Report - Minervini Volatility Contraction Pattern
-**Generated:** 2026-10-07 16:10:45
+**Generated:** 2026-10-10 16:05:41
 **Universe:** S&P 500 (503 stocks)
 
 ---
@@ -9,11 +9,11 @@
 | Stage | Count |
 |-------|-------|
 | Universe | 503 |
-| Pre-filter passed | 245 |
-| Trend Template passed | 92 |
-| VCP candidates | 92 |
+| Pre-filter passed | 262 |
+| Trend Template passed | 103 |
+| VCP candidates | 103 |
 
-**Showing top 20 of 92 candidates** (sorted by composite score)
+**Showing top 20 of 103 candidates** (sorted by composite score)
 
 ---
 
@@ -21,26 +21,26 @@
 
 | # | Symbol | Quality | State | Type | Price | Pivot Dist | Entry | Stop | Target |
 |---|--------|---------|-------|------|-------|------------|-------|------|--------|
-| 1 | ZBRA | 66 (Developing VCP) | Early-post-breakout | VCP-adjacent | $382.39 | +3.0% | $371.28 | $338.55 | $436.74 |
-| 2 | CVX | 62 (Developing VCP) | Pre-breakout | VCP-adjacent | $205.06 | -1.5% | $208.25 | $199.94 | $224.87 |
-| 3 | ANET | 62 (Developing VCP) | Early-post-breakout | VCP-adjacent | $214.80 | +4.2% | $206.13 | $179.46 | $259.47 |
-| 4 | DELL | 59 (Weak VCP) | Overextended | VCP-adjacent | $582.25 | +1.5% | $573.80 | — | — |
-| 5 | SNDK | 58 (Weak VCP) | Pre-breakout | VCP-adjacent | $1722.30 | -4.4% | $1802.00 | — | — |
-| 6 | ABBV | 58 (Weak VCP) | Early-post-breakout | VCP-adjacent | $274.50 | +2.8% | $266.97 | $249.81 | $301.29 |
-| 7 | AMD | 58 (Weak VCP) | Overextended | VCP-adjacent | $643.95 | +0.8% | $639.00 | — | — |
-| 8 | MU | 58 (Weak VCP) | Overextended | VCP-adjacent | $1079.10 | -2.6% | $1108.00 | — | — |
-| 9 | LITE | 58 (Weak VCP) | Early-post-breakout | VCP-adjacent | $1100.35 | +1.4% | $1085.68 | $836.55 | $1583.94 |
-| 10 | PANW | 57 (Weak VCP) | Overextended | VCP-adjacent | $407.61 | +2.2% | $398.88 | $324.72 | $547.20 |
-| 11 | DDOG | 57 (Weak VCP) | Pre-breakout | VCP-adjacent | $275.59 | -1.1% | $278.70 | $216.89 | $402.32 |
-| 12 | DE | 57 (Weak VCP) | Pre-breakout | VCP-adjacent | $663.72 | -8.0% | $721.22 | $637.62 | $888.42 |
-| 13 | WSM | 57 (Weak VCP) | Pre-breakout | VCP-adjacent | $239.58 | -3.4% | $248.07 | $216.41 | $311.39 |
-| 14 | FTNT | 56 (Weak VCP) | Overextended | VCP-adjacent | $190.27 | +4.9% | $181.37 | — | — |
-| 15 | BE | 56 (Weak VCP) | Pre-breakout | VCP-adjacent | $288.10 | -1.6% | $292.72 | — | — |
-| 16 | NVDA | 56 (Weak VCP) | Early-post-breakout | VCP-adjacent | $237.30 | +1.1% | $234.76 | $206.84 | $290.60 |
-| 17 | KEYS | 56 (Weak VCP) | Pre-breakout | VCP-adjacent | $379.95 | -2.6% | $389.93 | — | — |
-| 18 | TRGP | 55 (Weak VCP)★ | Damaged | Damaged | $278.90 | -6.0% | $296.63 | $264.33 | $361.23 |
-| 19 | PLTR | 55 (Weak VCP) | Pre-breakout | VCP-adjacent | $193.13 | -0.8% | $194.68 | — | — |
-| 20 | FFIV | 54 (Weak VCP) | Early-post-breakout | VCP-adjacent | $471.52 | +2.1% | $462.00 | — | — |
+| 1 | HUM | 72 (Good VCP) | Breakout | Post-breakout | $431.87 | +2.8% | $419.97 | $365.44 | $529.03 |
+| 2 | ZBRA | 64 (Developing VCP) | Early-post-breakout | VCP-adjacent | $387.18 | +4.3% | $371.28 | $338.55 | $436.74 |
+| 3 | CVX | 64 (Developing VCP) | Early-post-breakout | VCP-adjacent | $211.98 | +1.8% | $208.25 | $199.94 | $224.87 |
+| 4 | TRGP | 61 (Developing VCP) | Pre-breakout | VCP-adjacent | $286.70 | -3.4% | $296.63 | $264.33 | $361.23 |
+| 5 | ANET | 59 (Weak VCP) | Extended | VCP-adjacent | $216.74 | +5.2% | $206.13 | $179.46 | $259.47 |
+| 6 | DELL | 59 (Weak VCP) | Overextended | VCP-adjacent | $586.06 | +2.1% | $573.80 | — | — |
+| 7 | MU | 59 (Weak VCP) | Pre-breakout | VCP-adjacent | $1029.00 | -5.5% | $1088.50 | — | — |
+| 8 | MRK | 58 (Weak VCP) | Pre-breakout | VCP-adjacent | $145.60 | -5.2% | $153.57 | $137.41 | $185.89 |
+| 9 | KEYS | 58 (Weak VCP) | Pre-breakout | VCP-adjacent | $382.75 | -1.8% | $389.93 | — | — |
+| 10 | LITE | 58 (Weak VCP) | Early-post-breakout | VCP-adjacent | $1103.35 | +1.6% | $1085.68 | $836.55 | $1583.94 |
+| 11 | VRSN | 57 (Weak VCP) | Pre-breakout | VCP-adjacent | $303.74 | -2.0% | $310.00 | $272.48 | $385.04 |
+| 12 | WSM | 57 (Weak VCP) | Pre-breakout | VCP-adjacent | $241.78 | -2.5% | $248.07 | $216.41 | $311.39 |
+| 13 | XOM | 56 (Weak VCP) | Pre-breakout | VCP-adjacent | $168.94 | -0.4% | $169.64 | $154.29 | $200.34 |
+| 14 | NDSN | 56 (Weak VCP) | Early-post-breakout | VCP-adjacent | $328.17 | +2.2% | $321.10 | $302.97 | $357.36 |
+| 15 | AMZN | 56 (Weak VCP) | Pre-breakout | VCP-adjacent | $262.43 | -1.5% | $266.40 | $252.47 | $294.26 |
+| 16 | EBAY | 55 (Weak VCP) | Pre-breakout | VCP-adjacent | $112.19 | -2.6% | $115.17 | $99.50 | $146.51 |
+| 17 | AMD | 55 (Weak VCP) | Overextended | VCP-adjacent | $608.10 | -7.7% | $658.52 | — | — |
+| 18 | KO | 55 (Weak VCP) | Pre-breakout | VCP-adjacent | $88.05 | -1.5% | $89.36 | $84.28 | $99.52 |
+| 19 | CRL | 54 (Weak VCP) | Pre-breakout | VCP-adjacent | $301.79 | -0.5% | $303.31 | $264.60 | $380.73 |
+| 20 | IEX | 54 (Weak VCP) | Pre-breakout | VCP-adjacent | $234.29 | -0.6% | $235.61 | $217.25 | $272.33 |
 
 ★ = State Cap applied (rating downgraded from raw score)
 
@@ -52,80 +52,123 @@ No actionable pre-breakout candidates found.
 
 ## Section B: Extended / Quality VCP (20 stocks)
 
-### 1. ZBRA - Zebra Technologies
-**Quality:** 66/100 (Developing VCP) | **State:** Early-post-breakout | **Type:** VCP-adjacent
-**Price:** $382.39 | **Market Cap:** N/A | **Sector:** Information Technology
+### 1. HUM - Humana
+**Quality:** 72/100 (Good VCP) | **State:** Breakout | **Type:** Post-breakout
+**Price:** $431.87 | **Market Cap:** N/A | **Sector:** Health Care
+
+| Component | Score | Details |
+|-----------|-------|---------|
+| Trend Template | 95/100 | 7/7 criteria (raw 100, ext -5) |
+| Contraction Quality | 60/100 | 2 contractions: T1=17.5%, T2=12.1% |
+| Volume Pattern | 40/100 | Dry-up: 1.33 |
+| Pivot Proximity | 100/100 | +2.8% from pivot (BREAKOUT CONFIRMED) |
+| Relative Strength | 70/100 | RS Percentile: 73, Weighted RS: +37.4% |
+
+**Trade Setup:**
+- Pivot / Entry: $419.97
+- Stop-loss: $365.44
+- Take-profit: $529.03 (2.0:1 R:R)
+- Risk: 15.4%
+- Guidance: Buy on volume confirmation above pivot
+
+---
+
+### 2. ZBRA - Zebra Technologies
+**Quality:** 64/100 (Developing VCP) | **State:** Early-post-breakout | **Type:** VCP-adjacent
+**Price:** $387.18 | **Market Cap:** N/A | **Sector:** Information Technology
 
 | Component | Score | Details |
 |-----------|-------|---------|
 | Trend Template | 100/100 | 7/7 criteria |
 | Contraction Quality | 30/100 | 2 contractions: T1=9.3%, T2=7.9% |
-| Volume Pattern | 50/100 | Dry-up: 0.76 |
-| Pivot Proximity | 90/100 | +3.0% from pivot (ABOVE PIVOT (within 3%)) |
-| Relative Strength | 70/100 | RS Percentile: 72, Weighted RS: +35.8% |
+| Volume Pattern | 50/100 | Dry-up: 0.72 |
+| Pivot Proximity | 65/100 | +4.3% from pivot (EXTENDED - Moderate chase risk) |
+| Relative Strength | 80/100 | RS Percentile: 75, Weighted RS: +38.3% |
 
 **Trade Setup:**
 - Pivot / Entry: $371.28
 - Stop-loss: $338.55
 - Take-profit: $436.74 (2.0:1 R:R)
-- Risk: 11.5%
-- Guidance: Watchlist - wait for tighter contraction near pivot
+- Risk: 12.6%
+- Guidance: Watchlist - wait for tighter contraction near pivot | WARNING: Stock is +4.3% above pivot - Minervini advises against chasing >5% above pivot
 
 ---
 
-### 2. CVX - Chevron Corporation
-**Quality:** 62/100 (Developing VCP) | **State:** Pre-breakout | **Type:** VCP-adjacent
-**Price:** $205.06 | **Market Cap:** N/A | **Sector:** Energy
+### 3. CVX - Chevron Corporation
+**Quality:** 64/100 (Developing VCP) | **State:** Early-post-breakout | **Type:** VCP-adjacent
+**Price:** $211.98 | **Market Cap:** N/A | **Sector:** Energy
 
 | Component | Score | Details |
 |-----------|-------|---------|
 | Trend Template | 100/100 | 7/7 criteria |
 | Contraction Quality | 40/100 | 3 contractions: T1=5.3%, T2=7.8%, T3=3.0% |
-| Volume Pattern | 40/100 | Dry-up: 0.83 |
-| Pivot Proximity | 90/100 | -1.5% from pivot (AT PIVOT (within 2%)) |
-| Relative Strength | 40/100 | RS Percentile: 25, Weighted RS: +11.3% |
+| Volume Pattern | 40/100 | Dry-up: 0.78 |
+| Pivot Proximity | 90/100 | +1.8% from pivot (ABOVE PIVOT (within 3%)) |
+| Relative Strength | 50/100 | RS Percentile: 44, Weighted RS: +13.0% |
 
 **Trade Setup:**
 - Pivot / Entry: $208.25
 - Stop-loss: $199.94
 - Take-profit: $224.87 (2.0:1 R:R)
-- Risk: 2.5%
+- Risk: 5.7%
 - Guidance: Watchlist - wait for tighter contraction near pivot
 
 ---
 
-### 3. ANET - Arista Networks
-**Quality:** 62/100 (Developing VCP) | **State:** Early-post-breakout | **Type:** VCP-adjacent
-**Price:** $214.80 | **Market Cap:** N/A | **Sector:** Information Technology
+### 4. TRGP - Targa Resources
+**Quality:** 61/100 (Developing VCP) | **State:** Pre-breakout | **Type:** VCP-adjacent
+**Price:** $286.70 | **Market Cap:** N/A | **Sector:** Energy
+
+| Component | Score | Details |
+|-----------|-------|---------|
+| Trend Template | 100/100 | 7/7 criteria |
+| Contraction Quality | 30/100 | 2 contractions: T1=6.1%, T2=10.0% |
+| Volume Pattern | 40/100 | Dry-up: 0.98 |
+| Pivot Proximity | 75/100 | -3.4% from pivot (NEAR PIVOT (2-5% below)) |
+| Relative Strength | 60/100 | RS Percentile: 57, Weighted RS: +20.9% |
+
+**Trade Setup:**
+- Pivot / Entry: $296.63
+- Stop-loss: $264.33
+- Take-profit: $361.23 (2.0:1 R:R)
+- Risk: 7.8%
+- Guidance: Watchlist - wait for tighter contraction near pivot
+
+---
+
+### 5. ANET - Arista Networks
+**Quality:** 59/100 (Weak VCP) | **State:** Extended | **Type:** VCP-adjacent
+**Price:** $216.74 | **Market Cap:** N/A | **Sector:** Information Technology
 
 | Component | Score | Details |
 |-----------|-------|---------|
 | Trend Template | 95/100 | 7/7 criteria (raw 100, ext -5) |
 | Contraction Quality | 30/100 | 2 contractions: T1=13.5%, T2=12.1% |
-| Volume Pattern | 50/100 | Dry-up: 0.73 |
-| Pivot Proximity | 65/100 | +4.2% from pivot (EXTENDED - Moderate chase risk) |
-| Relative Strength | 70/100 | RS Percentile: 63, Weighted RS: +27.4% |
+| Volume Pattern | 50/100 | Dry-up: 0.78 |
+| Pivot Proximity | 50/100 | +5.2% from pivot (EXTENDED - High chase risk) |
+| Relative Strength | 70/100 | RS Percentile: 69, Weighted RS: +29.7% |
 
 **Trade Setup:**
 - Pivot / Entry: $206.13
 - Stop-loss: $179.46
 - Take-profit: $259.47 (2.0:1 R:R)
-- Risk: 16.4%
-- Guidance: Watchlist - wait for tighter contraction near pivot | WARNING: Stock is +4.2% above pivot - Minervini advises against chasing >5% above pivot
+- Risk from current price: 17.2%
+- WARNING: +5.2% above pivot — consider waiting for pullback to pivot.
+- Guidance: Monitor only - pattern needs more development | WARNING: Stock is +5.2% above pivot - Minervini advises against chasing >5% above pivot
 
 ---
 
-### 4. DELL - Dell Technologies
+### 6. DELL - Dell Technologies
 **Quality:** 59/100 (Weak VCP) | **State:** Overextended | **Type:** VCP-adjacent
-**Price:** $582.25 | **Market Cap:** N/A | **Sector:** Information Technology
+**Price:** $586.06 | **Market Cap:** N/A | **Sector:** Information Technology
 
 | Component | Score | Details |
 |-----------|-------|---------|
 | Trend Template | 90/100 | 7/7 criteria (raw 100, ext -10) |
 | Contraction Quality | 0/100 | 0 contractions:  |
-| Volume Pattern | 40/100 | Dry-up: 0.83 |
-| Pivot Proximity | 90/100 | +1.5% from pivot (ABOVE PIVOT (within 3%)) |
-| Relative Strength | 100/100 | RS Percentile: 98, Weighted RS: +178.5% |
+| Volume Pattern | 40/100 | Dry-up: 0.74 |
+| Pivot Proximity | 90/100 | +2.1% from pivot (ABOVE PIVOT (within 3%)) |
+| Relative Strength | 100/100 | RS Percentile: 99, Weighted RS: +180.8% |
 
 **Trade Setup:**
 - Pivot / Entry: $573.80
@@ -136,269 +179,59 @@ No actionable pre-breakout candidates found.
 
 ---
 
-### 5. SNDK - Sandisk
+### 7. MU - Micron Technology
+**Quality:** 59/100 (Weak VCP) | **State:** Pre-breakout | **Type:** VCP-adjacent
+**Price:** $1029.00 | **Market Cap:** N/A | **Sector:** Information Technology
+
+| Component | Score | Details |
+|-----------|-------|---------|
+| Trend Template | 100/100 | 7/7 criteria |
+| Contraction Quality | 0/100 | 0 contractions:  |
+| Volume Pattern | 50/100 | Dry-up: 0.95 |
+| Pivot Proximity | 60/100 | -5.5% from pivot (APPROACHING (5-8% below)) |
+| Relative Strength | 100/100 | RS Percentile: 97, Weighted RS: +150.3% |
+
+**Trade Setup:**
+- Pivot / Entry: $1088.50
+- Stop-loss: N/A
+- Take-profit: N/A
+- Risk: N/A
+- Guidance: Monitor only - pattern needs more development
+
+---
+
+### 8. MRK - Merck & Co.
 **Quality:** 58/100 (Weak VCP) | **State:** Pre-breakout | **Type:** VCP-adjacent
-**Price:** $1722.30 | **Market Cap:** N/A | **Sector:** Information Technology
+**Price:** $145.60 | **Market Cap:** N/A | **Sector:** Health Care
 
 | Component | Score | Details |
 |-----------|-------|---------|
-| Trend Template | 81/100 | 6/7 criteria (raw 86, ext -5) |
-| Contraction Quality | 0/100 | 0 contractions:  |
-| Volume Pattern | 60/100 | Dry-up: 0.60 |
-| Pivot Proximity | 75/100 | -4.4% from pivot (NEAR PIVOT (2-5% below)) |
-| Relative Strength | 100/100 | RS Percentile: 100, Weighted RS: +354.1% |
+| Trend Template | 100/100 | 7/7 criteria |
+| Contraction Quality | 30/100 | 2 contractions: T1=6.9%, T2=9.6% |
+| Volume Pattern | 40/100 | Dry-up: 0.83 |
+| Pivot Proximity | 60/100 | -5.2% from pivot (APPROACHING (5-8% below)) |
+| Relative Strength | 60/100 | RS Percentile: 56, Weighted RS: +20.7% |
 
 **Trade Setup:**
-- Pivot / Entry: $1802.00
-- Stop-loss: N/A
-- Take-profit: N/A
-- Risk: N/A
+- Pivot / Entry: $153.57
+- Stop-loss: $137.41
+- Take-profit: $185.89 (2.0:1 R:R)
+- Risk: 5.6%
 - Guidance: Monitor only - pattern needs more development
 
 ---
 
-### 6. ABBV - AbbVie
-**Quality:** 58/100 (Weak VCP) | **State:** Early-post-breakout | **Type:** VCP-adjacent
-**Price:** $274.50 | **Market Cap:** N/A | **Sector:** Health Care
+### 9. KEYS - Keysight Technologies
+**Quality:** 58/100 (Weak VCP) | **State:** Pre-breakout | **Type:** VCP-adjacent
+**Price:** $382.75 | **Market Cap:** N/A | **Sector:** Information Technology
 
 | Component | Score | Details |
 |-----------|-------|---------|
-| Trend Template | 86/100 | 6/7 criteria |
-| Contraction Quality | 30/100 | 2 contractions: T1=9.8%, T2=5.5% |
+| Trend Template | 90/100 | 7/7 criteria (raw 100, ext -10) |
+| Contraction Quality | 0/100 | 0 contractions:  |
 | Volume Pattern | 50/100 | Dry-up: 0.96 |
-| Pivot Proximity | 90/100 | +2.8% from pivot (ABOVE PIVOT (within 3%)) |
-| Relative Strength | 40/100 | RS Percentile: 18, Weighted RS: +8.4% |
-
-**Trade Setup:**
-- Pivot / Entry: $266.97
-- Stop-loss: $249.81
-- Take-profit: $301.29 (2.0:1 R:R)
-- Risk: 9.0%
-- Guidance: Monitor only - pattern needs more development
-
----
-
-### 7. AMD - Advanced Micro Devices
-**Quality:** 58/100 (Weak VCP) | **State:** Overextended | **Type:** VCP-adjacent
-**Price:** $643.95 | **Market Cap:** N/A | **Sector:** Information Technology
-
-| Component | Score | Details |
-|-----------|-------|---------|
-| Trend Template | 85/100 | 7/7 criteria (raw 100, ext -15) |
-| Contraction Quality | 0/100 | 0 contractions:  |
-| Volume Pattern | 50/100 | Dry-up: 0.86 |
-| Pivot Proximity | 90/100 | +0.8% from pivot (ABOVE PIVOT (within 3%)) |
-| Relative Strength | 90/100 | RS Percentile: 93, Weighted RS: +116.1% |
-
-**Trade Setup:**
-- Pivot / Entry: $639.00
-- Stop-loss: N/A
-- Take-profit: N/A
-- Risk: N/A
-- Guidance: Monitor only - pattern needs more development
-
----
-
-### 8. MU - Micron Technology
-**Quality:** 58/100 (Weak VCP) | **State:** Overextended | **Type:** VCP-adjacent
-**Price:** $1079.10 | **Market Cap:** N/A | **Sector:** Information Technology
-
-| Component | Score | Details |
-|-----------|-------|---------|
-| Trend Template | 95/100 | 7/7 criteria (raw 100, ext -5) |
-| Contraction Quality | 0/100 | 0 contractions:  |
-| Volume Pattern | 40/100 | Dry-up: 0.85 |
-| Pivot Proximity | 75/100 | -2.6% from pivot (NEAR PIVOT (2-5% below)) |
-| Relative Strength | 100/100 | RS Percentile: 96, Weighted RS: +162.6% |
-
-**Trade Setup:**
-- Pivot / Entry: $1108.00
-- Stop-loss: N/A
-- Take-profit: N/A
-- Risk: N/A
-- Guidance: Monitor only - pattern needs more development
-
----
-
-### 9. LITE - Lumentum
-**Quality:** 58/100 (Weak VCP) | **State:** Early-post-breakout | **Type:** VCP-adjacent
-**Price:** $1100.35 | **Market Cap:** N/A | **Sector:** Information Technology
-
-| Component | Score | Details |
-|-----------|-------|---------|
-| Trend Template | 85/100 | 7/7 criteria (raw 100, ext -15) |
-| Contraction Quality | 0/100 | 1 contractions: T1=22.2% |
-| Volume Pattern | 40/100 | Dry-up: 0.95 |
-| Pivot Proximity | 90/100 | +1.4% from pivot (ABOVE PIVOT (within 3%)) |
-| Relative Strength | 100/100 | RS Percentile: 97, Weighted RS: +163.1% |
-
-**Trade Setup:**
-- Pivot / Entry: $1085.68
-- Stop-loss: $836.55
-- Take-profit: $1583.94 (2.0:1 R:R)
-- Risk: 24.0%
-- Guidance: Monitor only - pattern needs more development
-
----
-
-### 10. PANW - Palo Alto Networks
-**Quality:** 57/100 (Weak VCP) | **State:** Overextended | **Type:** VCP-adjacent
-**Price:** $407.61 | **Market Cap:** N/A | **Sector:** Information Technology
-
-| Component | Score | Details |
-|-----------|-------|---------|
-| Trend Template | 95/100 | 7/7 criteria (raw 100, ext -5) |
-| Contraction Quality | 0/100 | 1 contractions: T1=17.8% |
-| Volume Pattern | 40/100 | Dry-up: 0.86 |
-| Pivot Proximity | 90/100 | +2.2% from pivot (ABOVE PIVOT (within 3%)) |
-| Relative Strength | 80/100 | RS Percentile: 82, Weighted RS: +67.5% |
-
-**Trade Setup:**
-- Pivot / Entry: $398.88
-- Stop-loss: $324.72
-- Take-profit: $547.20 (2.0:1 R:R)
-- Risk: 20.3%
-- Guidance: Monitor only - pattern needs more development
-
----
-
-### 11. DDOG - Datadog
-**Quality:** 57/100 (Weak VCP) | **State:** Pre-breakout | **Type:** VCP-adjacent
-**Price:** $275.59 | **Market Cap:** N/A | **Sector:** Information Technology
-
-| Component | Score | Details |
-|-----------|-------|---------|
-| Trend Template | 95/100 | 7/7 criteria (raw 100, ext -5) |
-| Contraction Quality | 0/100 | 1 contractions: T1=21.4% |
-| Volume Pattern | 40/100 | Dry-up: 0.72 |
-| Pivot Proximity | 90/100 | -1.1% from pivot (AT PIVOT (within 2%)) |
-| Relative Strength | 80/100 | RS Percentile: 79, Weighted RS: +53.6% |
-
-**Trade Setup:**
-- Pivot / Entry: $278.70
-- Stop-loss: $216.89
-- Take-profit: $402.32 (2.0:1 R:R)
-- Risk: 21.3%
-- Guidance: Monitor only - pattern needs more development
-
----
-
-### 12. DE - Deere & Company
-**Quality:** 57/100 (Weak VCP) | **State:** Pre-breakout | **Type:** VCP-adjacent
-**Price:** $663.72 | **Market Cap:** N/A | **Sector:** Industrials
-
-| Component | Score | Details |
-|-----------|-------|---------|
-| Trend Template | 100/100 | 7/7 criteria |
-| Contraction Quality | 30/100 | 2 contractions: T1=5.7%, T2=10.7% |
-| Volume Pattern | 40/100 | Dry-up: 0.97 |
-| Pivot Proximity | 60/100 | -8.0% from pivot (APPROACHING (5-8% below)) |
-| Relative Strength | 50/100 | RS Percentile: 33, Weighted RS: +13.0% |
-
-**Trade Setup:**
-- Pivot / Entry: $721.22
-- Stop-loss: $637.62
-- Take-profit: $888.42 (2.0:1 R:R)
-- Risk: 3.9%
-- Guidance: Monitor only - pattern needs more development
-
----
-
-### 13. WSM - Williams-Sonoma, Inc.
-**Quality:** 57/100 (Weak VCP) | **State:** Pre-breakout | **Type:** VCP-adjacent
-**Price:** $239.58 | **Market Cap:** N/A | **Sector:** Consumer Discretionary
-
-| Component | Score | Details |
-|-----------|-------|---------|
-| Trend Template | 86/100 | 6/7 criteria |
-| Contraction Quality | 40/100 | 3 contractions: T1=6.8%, T2=11.4%, T3=11.9% |
-| Volume Pattern | 40/100 | Dry-up: 0.93 |
-| Pivot Proximity | 75/100 | -3.4% from pivot (NEAR PIVOT (2-5% below)) |
-| Relative Strength | 40/100 | RS Percentile: 17, Weighted RS: +8.0% |
-
-**Trade Setup:**
-- Pivot / Entry: $248.07
-- Stop-loss: $216.41
-- Take-profit: $311.39 (2.0:1 R:R)
-- Risk: 9.7%
-- Guidance: Monitor only - pattern needs more development
-
----
-
-### 14. FTNT - Fortinet
-**Quality:** 56/100 (Weak VCP) | **State:** Overextended | **Type:** VCP-adjacent
-**Price:** $190.27 | **Market Cap:** N/A | **Sector:** Information Technology
-
-| Component | Score | Details |
-|-----------|-------|---------|
-| Trend Template | 90/100 | 7/7 criteria (raw 100, ext -10) |
-| Contraction Quality | 0/100 | 0 contractions:  |
-| Volume Pattern | 60/100 | Dry-up: 0.70 |
-| Pivot Proximity | 65/100 | +4.9% from pivot (EXTENDED - Moderate chase risk) |
-| Relative Strength | 80/100 | RS Percentile: 83, Weighted RS: +74.8% |
-
-**Trade Setup:**
-- Pivot / Entry: $181.37
-- Stop-loss: N/A
-- Take-profit: N/A
-- Risk: N/A
-- Guidance: Monitor only - pattern needs more development | WARNING: Stock is +4.9% above pivot - Minervini advises against chasing >5% above pivot
-
----
-
-### 15. BE - Bloom Energy
-**Quality:** 56/100 (Weak VCP) | **State:** Pre-breakout | **Type:** VCP-adjacent
-**Price:** $288.10 | **Market Cap:** N/A | **Sector:** Industrials
-
-| Component | Score | Details |
-|-----------|-------|---------|
-| Trend Template | 85/100 | 7/7 criteria (raw 100, ext -15) |
-| Contraction Quality | 0/100 | 0 contractions:  |
-| Volume Pattern | 40/100 | Dry-up: 0.91 |
-| Pivot Proximity | 90/100 | -1.6% from pivot (AT PIVOT (within 2%)) |
-| Relative Strength | 90/100 | RS Percentile: 91, Weighted RS: +96.4% |
-
-**Trade Setup:**
-- Pivot / Entry: $292.72
-- Stop-loss: N/A
-- Take-profit: N/A
-- Risk: N/A
-- Guidance: Monitor only - pattern needs more development
-
----
-
-### 16. NVDA - Nvidia
-**Quality:** 56/100 (Weak VCP) | **State:** Early-post-breakout | **Type:** VCP-adjacent
-**Price:** $237.30 | **Market Cap:** N/A | **Sector:** Information Technology
-
-| Component | Score | Details |
-|-----------|-------|---------|
-| Trend Template | 100/100 | 7/7 criteria |
-| Contraction Quality | 0/100 | 1 contractions: T1=11.0% |
-| Volume Pattern | 50/100 | Dry-up: 0.91 |
-| Pivot Proximity | 90/100 | +1.1% from pivot (ABOVE PIVOT (within 3%)) |
-| Relative Strength | 50/100 | RS Percentile: 36, Weighted RS: +13.9% |
-
-**Trade Setup:**
-- Pivot / Entry: $234.76
-- Stop-loss: $206.84
-- Take-profit: $290.60 (2.0:1 R:R)
-- Risk: 12.8%
-- Guidance: Monitor only - pattern needs more development
-
----
-
-### 17. KEYS - Keysight Technologies
-**Quality:** 56/100 (Weak VCP) | **State:** Pre-breakout | **Type:** VCP-adjacent
-**Price:** $379.95 | **Market Cap:** N/A | **Sector:** Information Technology
-
-| Component | Score | Details |
-|-----------|-------|---------|
-| Trend Template | 90/100 | 7/7 criteria (raw 100, ext -10) |
-| Contraction Quality | 0/100 | 0 contractions:  |
-| Volume Pattern | 50/100 | Dry-up: 0.92 |
-| Pivot Proximity | 75/100 | -2.6% from pivot (NEAR PIVOT (2-5% below)) |
-| Relative Strength | 80/100 | RS Percentile: 75, Weighted RS: +40.6% |
+| Pivot Proximity | 90/100 | -1.8% from pivot (AT PIVOT (within 2%)) |
+| Relative Strength | 80/100 | RS Percentile: 78, Weighted RS: +42.6% |
 
 **Trade Setup:**
 - Pivot / Entry: $389.93
@@ -409,41 +242,167 @@ No actionable pre-breakout candidates found.
 
 ---
 
-### 18. TRGP - Targa Resources
-**Quality:** 55/100 (Weak VCP) ★ → No VCP | **State:** Damaged | **Type:** Damaged
-**Price:** $278.90 | **Market Cap:** N/A | **Sector:** Energy
+### 10. LITE - Lumentum
+**Quality:** 58/100 (Weak VCP) | **State:** Early-post-breakout | **Type:** VCP-adjacent
+**Price:** $1103.35 | **Market Cap:** N/A | **Sector:** Information Technology
+
+| Component | Score | Details |
+|-----------|-------|---------|
+| Trend Template | 85/100 | 7/7 criteria (raw 100, ext -15) |
+| Contraction Quality | 0/100 | 1 contractions: T1=22.2% |
+| Volume Pattern | 40/100 | Dry-up: 0.98 |
+| Pivot Proximity | 90/100 | +1.6% from pivot (ABOVE PIVOT (within 3%)) |
+| Relative Strength | 100/100 | RS Percentile: 98, Weighted RS: +170.5% |
+
+**Trade Setup:**
+- Pivot / Entry: $1085.68
+- Stop-loss: $836.55
+- Take-profit: $1583.94 (2.0:1 R:R)
+- Risk: 24.2%
+- Guidance: Monitor only - pattern needs more development
+
+---
+
+### 11. VRSN - Verisign
+**Quality:** 57/100 (Weak VCP) | **State:** Pre-breakout | **Type:** VCP-adjacent
+**Price:** $303.74 | **Market Cap:** N/A | **Sector:** Information Technology
 
 | Component | Score | Details |
 |-----------|-------|---------|
 | Trend Template | 86/100 | 6/7 criteria |
-| Contraction Quality | 30/100 | 2 contractions: T1=6.1%, T2=10.0% |
-| Volume Pattern | 40/100 | Dry-up: 0.96 |
-| Pivot Proximity | 60/100 | -6.0% from pivot (APPROACHING (5-8% below)) |
-| Relative Strength | 60/100 | RS Percentile: 51, Weighted RS: +19.5% |
+| Contraction Quality | 40/100 | 3 contractions: T1=10.5%, T2=7.1%, T3=11.2% |
+| Volume Pattern | 40/100 | Dry-up: 1.27 |
+| Pivot Proximity | 75/100 | -2.0% from pivot (NEAR PIVOT (2-5% below)) |
+| Relative Strength | 40/100 | RS Percentile: 18, Weighted RS: +5.4% |
 
 **Trade Setup:**
-- Pivot / Entry: $296.63
-- Stop-loss: $264.33
-- Take-profit: $361.23 (2.0:1 R:R)
-- Risk: 5.2%
-- Guidance: Not actionable as VCP
+- Pivot / Entry: $310.00
+- Stop-loss: $272.48
+- Take-profit: $385.04 (2.0:1 R:R)
+- Risk: 10.3%
+- Guidance: Monitor only - pattern needs more development
 
 ---
 
-### 19. PLTR - Palantir Technologies
-**Quality:** 55/100 (Weak VCP) | **State:** Pre-breakout | **Type:** VCP-adjacent
-**Price:** $193.13 | **Market Cap:** N/A | **Sector:** Information Technology
+### 12. WSM - Williams-Sonoma, Inc.
+**Quality:** 57/100 (Weak VCP) | **State:** Pre-breakout | **Type:** VCP-adjacent
+**Price:** $241.78 | **Market Cap:** N/A | **Sector:** Consumer Discretionary
 
 | Component | Score | Details |
 |-----------|-------|---------|
-| Trend Template | 81/100 | 6/7 criteria (raw 86, ext -5) |
-| Contraction Quality | 0/100 | 0 contractions:  |
-| Volume Pattern | 60/100 | Dry-up: 0.60 |
-| Pivot Proximity | 90/100 | -0.8% from pivot (AT PIVOT (within 2%)) |
-| Relative Strength | 60/100 | RS Percentile: 53, Weighted RS: +20.4% |
+| Trend Template | 86/100 | 6/7 criteria |
+| Contraction Quality | 40/100 | 3 contractions: T1=6.8%, T2=11.4%, T3=11.9% |
+| Volume Pattern | 40/100 | Dry-up: 0.94 |
+| Pivot Proximity | 75/100 | -2.5% from pivot (NEAR PIVOT (2-5% below)) |
+| Relative Strength | 40/100 | RS Percentile: 28, Weighted RS: +9.8% |
 
 **Trade Setup:**
-- Pivot / Entry: $194.68
+- Pivot / Entry: $248.07
+- Stop-loss: $216.41
+- Take-profit: $311.39 (2.0:1 R:R)
+- Risk: 10.5%
+- Guidance: Monitor only - pattern needs more development
+
+---
+
+### 13. XOM - ExxonMobil
+**Quality:** 56/100 (Weak VCP) | **State:** Pre-breakout | **Type:** VCP-adjacent
+**Price:** $168.94 | **Market Cap:** N/A | **Sector:** Energy
+
+| Component | Score | Details |
+|-----------|-------|---------|
+| Trend Template | 100/100 | 7/7 criteria |
+| Contraction Quality | 0/100 | 1 contractions: T1=8.1% |
+| Volume Pattern | 40/100 | Dry-up: 0.83 |
+| Pivot Proximity | 90/100 | -0.4% from pivot (AT PIVOT (within 2%)) |
+| Relative Strength | 60/100 | RS Percentile: 50, Weighted RS: +15.8% |
+
+**Trade Setup:**
+- Pivot / Entry: $169.64
+- Stop-loss: $154.29
+- Take-profit: $200.34 (2.0:1 R:R)
+- Risk: 8.7%
+- Guidance: Monitor only - pattern needs more development
+
+---
+
+### 14. NDSN - Nordson Corporation
+**Quality:** 56/100 (Weak VCP) | **State:** Early-post-breakout | **Type:** VCP-adjacent
+**Price:** $328.17 | **Market Cap:** N/A | **Sector:** Industrials
+
+| Component | Score | Details |
+|-----------|-------|---------|
+| Trend Template | 100/100 | 7/7 criteria |
+| Contraction Quality | 0/100 | 1 contractions: T1=4.7% |
+| Volume Pattern | 40/100 | Dry-up: 0.92 |
+| Pivot Proximity | 90/100 | +2.2% from pivot (ABOVE PIVOT (within 3%)) |
+| Relative Strength | 60/100 | RS Percentile: 45, Weighted RS: +13.2% |
+
+**Trade Setup:**
+- Pivot / Entry: $321.10
+- Stop-loss: $302.97
+- Take-profit: $357.36 (2.0:1 R:R)
+- Risk: 7.7%
+- Guidance: Monitor only - pattern needs more development
+
+---
+
+### 15. AMZN - Amazon
+**Quality:** 56/100 (Weak VCP) | **State:** Pre-breakout | **Type:** VCP-adjacent
+**Price:** $262.43 | **Market Cap:** N/A | **Sector:** Consumer Discretionary
+
+| Component | Score | Details |
+|-----------|-------|---------|
+| Trend Template | 86/100 | 6/7 criteria |
+| Contraction Quality | 30/100 | 2 contractions: T1=8.0%, T2=4.3% |
+| Volume Pattern | 50/100 | Dry-up: 0.94 |
+| Pivot Proximity | 90/100 | -1.5% from pivot (AT PIVOT (within 2%)) |
+| Relative Strength | 20/100 | RS Percentile: 6, Weighted RS: -1.1% |
+
+**Trade Setup:**
+- Pivot / Entry: $266.40
+- Stop-loss: $252.47
+- Take-profit: $294.26 (2.0:1 R:R)
+- Risk: 3.8%
+- Guidance: Monitor only - pattern needs more development
+
+---
+
+### 16. EBAY - eBay Inc.
+**Quality:** 55/100 (Weak VCP) | **State:** Pre-breakout | **Type:** VCP-adjacent
+**Price:** $112.19 | **Market Cap:** N/A | **Sector:** Consumer Discretionary
+
+| Component | Score | Details |
+|-----------|-------|---------|
+| Trend Template | 86/100 | 6/7 criteria |
+| Contraction Quality | 30/100 | 2 contractions: T1=9.9%, T2=12.7% |
+| Volume Pattern | 60/100 | Dry-up: 0.69 |
+| Pivot Proximity | 75/100 | -2.6% from pivot (NEAR PIVOT (2-5% below)) |
+| Relative Strength | 20/100 | RS Percentile: 11, Weighted RS: +1.4% |
+
+**Trade Setup:**
+- Pivot / Entry: $115.17
+- Stop-loss: $99.50
+- Take-profit: $146.51 (2.0:1 R:R)
+- Risk: 11.3%
+- Guidance: Monitor only - pattern needs more development
+
+---
+
+### 17. AMD - Advanced Micro Devices
+**Quality:** 55/100 (Weak VCP) | **State:** Overextended | **Type:** VCP-adjacent
+**Price:** $608.10 | **Market Cap:** N/A | **Sector:** Information Technology
+
+| Component | Score | Details |
+|-----------|-------|---------|
+| Trend Template | 90/100 | 7/7 criteria (raw 100, ext -10) |
+| Contraction Quality | 0/100 | 0 contractions:  |
+| Volume Pattern | 50/100 | Dry-up: 0.88 |
+| Pivot Proximity | 60/100 | -7.7% from pivot (APPROACHING (5-8% below)) |
+| Relative Strength | 90/100 | RS Percentile: 92, Weighted RS: +96.0% |
+
+**Trade Setup:**
+- Pivot / Entry: $658.52
 - Stop-loss: N/A
 - Take-profit: N/A
 - Risk: N/A
@@ -451,23 +410,65 @@ No actionable pre-breakout candidates found.
 
 ---
 
-### 20. FFIV - F5, Inc.
-**Quality:** 54/100 (Weak VCP) | **State:** Early-post-breakout | **Type:** VCP-adjacent
-**Price:** $471.52 | **Market Cap:** N/A | **Sector:** Information Technology
+### 18. KO - Coca-Cola Company (The)
+**Quality:** 55/100 (Weak VCP) | **State:** Pre-breakout | **Type:** VCP-adjacent
+**Price:** $88.05 | **Market Cap:** N/A | **Sector:** Consumer Staples
 
 | Component | Score | Details |
 |-----------|-------|---------|
-| Trend Template | 90/100 | 7/7 criteria (raw 100, ext -10) |
-| Contraction Quality | 0/100 | 0 contractions:  |
-| Volume Pattern | 40/100 | Dry-up: 0.92 |
-| Pivot Proximity | 90/100 | +2.1% from pivot (ABOVE PIVOT (within 3%)) |
-| Relative Strength | 70/100 | RS Percentile: 65, Weighted RS: +28.4% |
+| Trend Template | 86/100 | 6/7 criteria |
+| Contraction Quality | 40/100 | 3 contractions: T1=5.5%, T2=3.6%, T3=4.7% |
+| Volume Pattern | 20/100 | Dry-up: 1.06 |
+| Pivot Proximity | 90/100 | -1.5% from pivot (AT PIVOT (within 2%)) |
+| Relative Strength | 40/100 | RS Percentile: 20, Weighted RS: +6.3% |
 
 **Trade Setup:**
-- Pivot / Entry: $462.00
-- Stop-loss: N/A
-- Take-profit: N/A
-- Risk: N/A
+- Pivot / Entry: $89.36
+- Stop-loss: $84.28
+- Take-profit: $99.52 (2.0:1 R:R)
+- Risk: 4.3%
+- Guidance: Monitor only - pattern needs more development
+
+---
+
+### 19. CRL - Charles River Laboratories
+**Quality:** 54/100 (Weak VCP) | **State:** Pre-breakout | **Type:** VCP-adjacent
+**Price:** $301.79 | **Market Cap:** N/A | **Sector:** Health Care
+
+| Component | Score | Details |
+|-----------|-------|---------|
+| Trend Template | 100/100 | 7/7 criteria |
+| Contraction Quality | 0/100 | 1 contractions: T1=11.9% |
+| Volume Pattern | 20/100 | Dry-up: 1.04 |
+| Pivot Proximity | 90/100 | -0.5% from pivot (AT PIVOT (within 2%)) |
+| Relative Strength | 80/100 | RS Percentile: 76, Weighted RS: +39.5% |
+
+**Trade Setup:**
+- Pivot / Entry: $303.31
+- Stop-loss: $264.60
+- Take-profit: $380.73 (2.0:1 R:R)
+- Risk: 12.3%
+- Guidance: Monitor only - pattern needs more development
+
+---
+
+### 20. IEX - IDEX Corporation
+**Quality:** 54/100 (Weak VCP) | **State:** Pre-breakout | **Type:** VCP-adjacent
+**Price:** $234.29 | **Market Cap:** N/A | **Sector:** Industrials
+
+| Component | Score | Details |
+|-----------|-------|---------|
+| Trend Template | 86/100 | 6/7 criteria |
+| Contraction Quality | 30/100 | 2 contractions: T1=5.8%, T2=6.9% |
+| Volume Pattern | 30/100 | Dry-up: 1.15 |
+| Pivot Proximity | 90/100 | -0.6% from pivot (AT PIVOT (within 2%)) |
+| Relative Strength | 40/100 | RS Percentile: 24, Weighted RS: +8.8% |
+
+**Trade Setup:**
+- Pivot / Entry: $235.61
+- Stop-loss: $217.25
+- Take-profit: $272.33 (2.0:1 R:R)
+- Risk: 7.3%
 - Guidance: Monitor only - pattern needs more development
 
 ---
@@ -475,12 +476,12 @@ No actionable pre-breakout candidates found.
 ---
 
 ## Summary Statistics
-- **Total VCP Candidates:** 92
+- **Total VCP Candidates:** 103
 - **Textbook VCP:** 0
 - **Strong VCP:** 0
-- **Good VCP:** 0
+- **Good VCP:** 1
 - **Developing VCP:** 3
-- **Weak / No VCP:** 89
+- **Weak / No VCP:** 99
 
 *Counts are based on final rating (after state caps).*
 
@@ -488,19 +489,19 @@ No actionable pre-breakout candidates found.
 
 | Sector | Count |
 |--------|-------|
-| Information Technology | 36 |
+| Information Technology | 35 |
 | Health Care | 21 |
-| Industrials | 14 |
-| Energy | 9 |
-| Consumer Discretionary | 3 |
-| Consumer Staples | 3 |
-| Materials | 3 |
-| Financials | 2 |
-| Communication Services | 1 |
+| Energy | 12 |
+| Industrials | 12 |
+| Consumer Discretionary | 6 |
+| Financials | 6 |
+| Consumer Staples | 5 |
+| Materials | 4 |
+| Communication Services | 2 |
 
 ### API Usage
 - **API Calls Made:** 504
-- **Cache Entries:** 504
+- **Cache Entries:** 505
 
 ---
 
